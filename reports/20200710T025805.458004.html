@@ -1,0 +1,1137 @@
+<head>
+  <meta content="text/html; charset=utf-8" http-equiv="content-type" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> - TestReport</title>
+  <style>
+    body {
+      background-color: #f2f2f2;
+      color: #333;
+      margin: 0 auto;
+      width: 960px;
+    }
+    #summary {
+      width: 960px;
+      margin-bottom: 20px;
+    }
+    #summary th {
+      background-color: skyblue;
+      padding: 5px 12px;
+    }
+    #summary td {
+      background-color: lightblue;
+      text-align: center;
+      padding: 4px 8px;
+    }
+    .details {
+      width: 960px;
+      margin-bottom: 20px;
+    }
+    .details th {
+      background-color: skyblue;
+      padding: 5px 12px;
+    }
+    .details tr .passed {
+      background-color: lightgreen;
+    }
+    .details tr .failed {
+      background-color: red;
+    }
+    .details tr .unchecked {
+      background-color: gray;
+    }
+    .details td {
+      background-color: lightblue;
+      padding: 5px 12px;
+    }
+    .details .detail {
+      background-color: lightgrey;
+      font-size: smaller;
+      padding: 5px 10px;
+      line-height: 20px;
+      text-align: left;
+    }
+    .details .success {
+      background-color: greenyellow;
+    }
+    .details .error {
+      background-color: red;
+    }
+    .details .failure {
+      background-color: salmon;
+    }
+    .details .skipped {
+      background-color: gray;
+    }
+
+    .button {
+      font-size: 1em;
+      padding: 6px;
+      width: 4em;
+      text-align: center;
+      background-color: #06d85f;
+      border-radius: 20px/50px;
+      cursor: pointer;
+      transition: all 0.3s ease-out;
+    }
+    a.button{
+      color: gray;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .button:hover {
+      background: #2cffbd;
+    }
+
+    .overlay {
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(0, 0, 0, 0.7);
+      transition: opacity 500ms;
+      visibility: hidden;
+      opacity: 0;
+      line-height: 25px;
+    }
+    .overlay:target {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    .popup {
+      margin: 70px auto;
+      padding: 20px;
+      background: #fff;
+      border-radius: 10px;
+      width: 50%;
+      position: relative;
+      transition: all 3s ease-in-out;
+    }
+
+    .popup h2 {
+      margin-top: 0;
+      color: #333;
+      font-family: Tahoma, Arial, sans-serif;
+    }
+    .popup .close {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      transition: all 200ms;
+      font-size: 30px;
+      font-weight: bold;
+      text-decoration: none;
+      color: #333;
+    }
+    .popup .close:hover {
+      color: #06d85f;
+    }
+    .popup .content {
+      max-height: 80%;
+      overflow: auto;
+      text-align: left;
+    }
+    .popup .separator {
+      color:royalblue
+    }
+
+    @media screen and (max-width: 700px) {
+      .box {
+        width: 70%;
+      }
+      .popup {
+        width: 70%;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+  <h1>Test Report: </h1>
+
+  <h2>Summary</h2>
+  <table id="summary">
+    <tr>
+      <th>START AT</th>
+      <td colspan="4">2020-07-10T02:58:05.458004</td>
+    </tr>
+    <tr>
+      <th>DURATION</th>
+      <td colspan="4">0.118 seconds</td>
+    </tr>
+    <tr>
+      <th>PLATFORM</th>
+      <td>HttpRunner 3.0.1 </td>
+      <td>CPython 3.8.0 </td>
+      <td colspan="2">Windows-7-6.1.7601-SP1</td>
+    </tr>
+    <tr>
+      <th>STAT</th>
+      <th colspan="2">TESTCASES (success/fail)</th>
+      <th colspan="2">TESTSTEPS (success/fail/error/skip)</th>
+    </tr>
+    <tr>
+      <td>total (details) =></td>
+      <td colspan="2">1 (0/1)</td>
+      <td colspan="2">4 (2/1/1/0)</td>
+    </tr>
+  </table>
+
+  <h2>Details</h2>
+
+  
+  
+  <h3>接口测试</h3>
+  <table id="suite_1" class="details">
+    <tr>
+      <td>TOTAL: 4</td>
+      <td>SUCCESS: 2</td>
+      <td>FAILED: 1</td>
+      <td>ERROR: 1</td>
+      <td>SKIPPED: 0</td>
+    </tr>
+    <tr>
+      <th>Status</th>
+      <th colspan="2">Name</th>
+      <th>Response Time</th>
+      <th>Detail</th>
+    </tr>
+
+    
+    
+    
+    <tr id="record_1_1">
+      <th class="success" style="width:5em;">success</th>
+      <td colspan="2">登录</td>
+      <td style="text-align:center;width:6em;">46.00 ms</td>
+      <td class="detail">
+
+        
+        
+        <a class="button" href="#popup_log_1_1_1">log-1</a>
+        <div id="popup_log_1_1_1" class="overlay">
+          <div class="popup">
+            <h2>Request and Response data</h2>
+            <a class="close" href="#record_1_1_1">&times;</a>
+
+            <div class="content">
+              <h3>Name: 登录</h3>
+
+              
+
+              
+
+              <h3>Request:</h3>
+              <div style="overflow: auto">
+                <table>
+                  
+                    <tr>
+                      <th>url</th>
+                      <td>
+                        
+                            http://test-api.51dengta.net/user/auth/smsLogin
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>method</th>
+                      <td>
+                        
+                            POST
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>headers</th>
+                      <td>
+                        
+                            <pre>{
+  &#34;User-Agent&#34;: &#34;python-requests/2.23.0&#34;,
+  &#34;Accept-Encoding&#34;: &#34;gzip, deflate&#34;,
+  &#34;Accept&#34;: &#34;*/*&#34;,
+  &#34;Connection&#34;: &#34;keep-alive&#34;,
+  &#34;Content-Type&#34;: &#34;application/json&#34;,
+  &#34;HRUN-Request-ID&#34;: &#34;b93d425b-f8a7-4e3d-ba52-1e061ab89df6&#34;,
+  &#34;Content-Length&#34;: &#34;39&#34;
+}</pre>
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>body</th>
+                      <td>
+                        
+                            <pre>{
+  &#34;phone&#34;: 15900000009,
+  &#34;code&#34;: &#34;80008&#34;
+}</pre>
+                        
+                      </td>
+                    </tr>
+                  
+                </table>
+              </div>
+
+              <h3>Response:</h3>
+              <div style="overflow: auto">
+                <table>
+                    
+                      <tr>
+                        <th>ok</th>
+                        <td>
+                          
+                            True
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>url</th>
+                        <td>
+                          
+                            http://test-api.51dengta.net/user/auth/smsLogin
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>status_code</th>
+                        <td>
+                          
+                            200
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>reason</th>
+                        <td>
+                          
+                            OK
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>cookies</th>
+                        <td>
+                          
+                            {}
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>encoding</th>
+                        <td>
+                          
+                            utf-8
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>headers</th>
+                        <td>
+                          
+                            <pre>{
+  &#34;Server&#34;: &#34;nginx&#34;,
+  &#34;Date&#34;: &#34;Fri, 10 Jul 2020 02:58:03 GMT&#34;,
+  &#34;Content-Type&#34;: &#34;application/json;charset=utf-8&#34;,
+  &#34;Content-Length&#34;: &#34;501&#34;,
+  &#34;Connection&#34;: &#34;keep-alive&#34;,
+  &#34;Access-Control-Allow-Origin&#34;: &#34;*&#34;,
+  &#34;Access-Control-Allow-Methods&#34;: &#34;GET, POST, OPTIONS&#34;,
+  &#34;Access-Control-Allow-Credentials&#34;: &#34;true&#34;,
+  &#34;Access-Control-Allow-Headers&#34;: &#34;Content-Type, Authorization, X-Requested-With&#34;,
+  &#34;Content-Encoding&#34;: &#34;gzip&#34;
+}</pre>
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>content_type</th>
+                        <td>
+                          
+                            application/json;charset=utf-8
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>body</th>
+                        <td>
+                          
+                            
+                              <pre>{
+  &#34;result&#34;: true,
+  &#34;code&#34;: 0,
+  &#34;info&#34;: {
+    &#34;first_visit&#34;: false,
+    &#34;is_band_wx&#34;: 0,
+    &#34;access_token&#34;: &#34;eyJhbGciOiJITUFDU0hBMjU2IiwiaXNzIjoiRWFzeVN3b29sZSIsImV4cCI6MTYyNTg4NTg4Mywic3ViIjpudWxsLCJuYmYiOjE1OTQzNDk4ODMsImF1ZCI6bnVsbCwiaWF0IjoxNTk0MzQ5ODgzLCJqdGkiOiJwRDdoTHlIMWsyIiwic2lnbmF0dXJlIjoiZDM3ZWQyMzU4MTIwY2I1YmFlNzE2Y2IyNDZhOWFjOGY3MGZjZmMxYjE3MWU2NGM0ZjE2ZTM2YTAwNWIzMTE2NyIsInN0YXR1cyI6MSwiZGF0YSI6IjY5NDQ3NjE4MzcifQ%3D%3D&#34;,
+    &#34;user_id&#34;: &#34;6944761837&#34;,
+    &#34;im_token&#34;: &#34;ce06550021f1a5ae82f5d4baa9004596&#34;,
+    &#34;expire&#34;: 31536000,
+    &#34;user_info&#34;: {
+      &#34;nickname&#34;: &#34;秋秋&#34;,
+      &#34;sex&#34;: 2
+    }
+  },
+  &#34;msg&#34;: &#34;&#34;,
+  &#34;request_id&#34;: &#34;g04vxd7z40g04vf9e8nb&#34;,
+  &#34;run_time&#34;: 0.008630990982055664
+}</pre>
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                  </table>
+              </div>
+              
+
+              <h3>Validators:</h3>
+                <div style="overflow: auto">
+                
+                
+                <table>
+                    <tr>
+                      <th>check</th>
+                      <th>comparator</th>
+                      <th>expect value</th>
+                      <th>actual value</th>
+                    </tr>
+                    
+                    <tr>
+                      
+                      <td class="passed">
+                      
+                        status_code
+                      </td>
+                      <td>equals</td>
+                      <td>200</td>
+                      <td>200</td>
+                    </tr>
+                    
+                </table>
+                
+
+                
+                
+              </div>
+
+              <h3>Statistics:</h3>
+              <div style="overflow: auto">
+                <table>
+                  <tr>
+                      <th>content_size(bytes)</th>
+                      <td>620</td>
+                    </tr>
+                  <tr>
+                    <th>response_time(ms)</th>
+                    <td>46.0</td>
+                  </tr>
+                  <tr>
+                    <th>elapsed(ms)</th>
+                    <td>42.119</td>
+                  </tr>
+                </table>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        
+
+        
+
+      </td>
+    </tr>
+  
+    
+    
+    <tr id="record_1_2">
+      <th class="success" style="width:5em;">success</th>
+      <td colspan="2">开播列表</td>
+      <td style="text-align:center;width:6em;">26.00 ms</td>
+      <td class="detail">
+
+        
+        
+        <a class="button" href="#popup_log_1_2_1">log-1</a>
+        <div id="popup_log_1_2_1" class="overlay">
+          <div class="popup">
+            <h2>Request and Response data</h2>
+            <a class="close" href="#record_1_2_1">&times;</a>
+
+            <div class="content">
+              <h3>Name: 开播列表</h3>
+
+              
+
+              
+
+              <h3>Request:</h3>
+              <div style="overflow: auto">
+                <table>
+                  
+                    <tr>
+                      <th>url</th>
+                      <td>
+                        
+                            http://test-api.51dengta.net/room/room/list
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>method</th>
+                      <td>
+                        
+                            POST
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>headers</th>
+                      <td>
+                        
+                            <pre>{
+  &#34;User-Agent&#34;: &#34;python-requests/2.23.0&#34;,
+  &#34;Accept-Encoding&#34;: &#34;gzip, deflate&#34;,
+  &#34;Accept&#34;: &#34;*/*&#34;,
+  &#34;Connection&#34;: &#34;keep-alive&#34;,
+  &#34;Content-Type&#34;: &#34;application/json&#34;,
+  &#34;HRUN-Request-ID&#34;: &#34;b93d425b-f8a7-4e3d-ba52-1e061ab89df6&#34;,
+  &#34;Content-Length&#34;: &#34;372&#34;
+}</pre>
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>body</th>
+                      <td>
+                        
+                            <pre>{
+  &#34;access_token&#34;: &#34;eyJhbGciOiJITUFDU0hBMjU2IiwiaXNzIjoiRWFzeVN3b29sZSIsImV4cCI6MTYyNTg4NTg4Mywic3ViIjpudWxsLCJuYmYiOjE1OTQzNDk4ODMsImF1ZCI6bnVsbCwiaWF0IjoxNTk0MzQ5ODgzLCJqdGkiOiJwRDdoTHlIMWsyIiwic2lnbmF0dXJlIjoiZDM3ZWQyMzU4MTIwY2I1YmFlNzE2Y2IyNDZhOWFjOGY3MGZjZmMxYjE3MWU2NGM0ZjE2ZTM2YTAwNWIzMTE2NyIsInN0YXR1cyI6MSwiZGF0YSI6IjY5NDQ3NjE4MzcifQ%3D%3D&#34;,
+  &#34;page&#34;: 1,
+  &#34;limit&#34;: 10
+}</pre>
+                        
+                      </td>
+                    </tr>
+                  
+                </table>
+              </div>
+
+              <h3>Response:</h3>
+              <div style="overflow: auto">
+                <table>
+                    
+                      <tr>
+                        <th>ok</th>
+                        <td>
+                          
+                            True
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>url</th>
+                        <td>
+                          
+                            http://test-api.51dengta.net/room/room/list
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>status_code</th>
+                        <td>
+                          
+                            200
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>reason</th>
+                        <td>
+                          
+                            OK
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>cookies</th>
+                        <td>
+                          
+                            {}
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>encoding</th>
+                        <td>
+                          
+                            utf-8
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>headers</th>
+                        <td>
+                          
+                            <pre>{
+  &#34;Server&#34;: &#34;nginx&#34;,
+  &#34;Date&#34;: &#34;Fri, 10 Jul 2020 02:58:03 GMT&#34;,
+  &#34;Content-Type&#34;: &#34;application/json;charset=utf-8&#34;,
+  &#34;Content-Length&#34;: &#34;137&#34;,
+  &#34;Connection&#34;: &#34;keep-alive&#34;,
+  &#34;Access-Control-Allow-Origin&#34;: &#34;*&#34;,
+  &#34;Access-Control-Allow-Methods&#34;: &#34;GET, POST, OPTIONS&#34;,
+  &#34;Access-Control-Allow-Credentials&#34;: &#34;true&#34;,
+  &#34;Access-Control-Allow-Headers&#34;: &#34;Content-Type, Authorization, X-Requested-With&#34;,
+  &#34;Content-Encoding&#34;: &#34;gzip&#34;
+}</pre>
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>content_type</th>
+                        <td>
+                          
+                            application/json;charset=utf-8
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>body</th>
+                        <td>
+                          
+                            
+                              <pre>{
+  &#34;result&#34;: true,
+  &#34;code&#34;: 0,
+  &#34;info&#34;: {
+    &#34;list&#34;: [],
+    &#34;cul_user&#34;: {
+      &#34;is_first&#34;: true
+    }
+  },
+  &#34;msg&#34;: &#34;&#34;,
+  &#34;request_id&#34;: &#34;g04v1h425zsg04vaoogun&#34;,
+  &#34;run_time&#34;: 0.009372949600219727
+}</pre>
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                  </table>
+              </div>
+              
+
+              <h3>Validators:</h3>
+                <div style="overflow: auto">
+                
+                
+                <table>
+                    <tr>
+                      <th>check</th>
+                      <th>comparator</th>
+                      <th>expect value</th>
+                      <th>actual value</th>
+                    </tr>
+                    
+                    <tr>
+                      
+                      <td class="passed">
+                      
+                        status_code
+                      </td>
+                      <td>equals</td>
+                      <td>200</td>
+                      <td>200</td>
+                    </tr>
+                    
+                </table>
+                
+
+                
+                
+              </div>
+
+              <h3>Statistics:</h3>
+              <div style="overflow: auto">
+                <table>
+                  <tr>
+                      <th>content_size(bytes)</th>
+                      <td>150</td>
+                    </tr>
+                  <tr>
+                    <th>response_time(ms)</th>
+                    <td>26.0</td>
+                  </tr>
+                  <tr>
+                    <th>elapsed(ms)</th>
+                    <td>25.149</td>
+                  </tr>
+                </table>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        
+
+        
+
+      </td>
+    </tr>
+  
+    
+    
+    <tr id="record_1_3">
+      <th class="failure" style="width:5em;">failure</th>
+      <td colspan="2">主页短视频列表---</td>
+      <td style="text-align:center;width:6em;">21.00 ms</td>
+      <td class="detail">
+
+        
+        
+        <a class="button" href="#popup_log_1_3_1">log-1</a>
+        <div id="popup_log_1_3_1" class="overlay">
+          <div class="popup">
+            <h2>Request and Response data</h2>
+            <a class="close" href="#record_1_3_1">&times;</a>
+
+            <div class="content">
+              <h3>Name: 主页短视频列表---</h3>
+
+              
+
+              
+
+              <h3>Request:</h3>
+              <div style="overflow: auto">
+                <table>
+                  
+                    <tr>
+                      <th>url</th>
+                      <td>
+                        
+                            http://test-api.51dengta.net/video/video/list
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>method</th>
+                      <td>
+                        
+                            POST
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>headers</th>
+                      <td>
+                        
+                            <pre>{
+  &#34;User-Agent&#34;: &#34;python-requests/2.23.0&#34;,
+  &#34;Accept-Encoding&#34;: &#34;gzip, deflate&#34;,
+  &#34;Accept&#34;: &#34;*/*&#34;,
+  &#34;Connection&#34;: &#34;keep-alive&#34;,
+  &#34;Content-Type&#34;: &#34;application/json&#34;,
+  &#34;HRUN-Request-ID&#34;: &#34;b93d425b-f8a7-4e3d-ba52-1e061ab89df6&#34;,
+  &#34;Content-Length&#34;: &#34;413&#34;
+}</pre>
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>body</th>
+                      <td>
+                        
+                            <pre>{
+  &#34;access_token&#34;: &#34;eyJhbGciOiJITUFDU0hBMjU2IiwiaXNzIjoiRWFzeVN3b29sZSIsImV4cCI6MTYyNTg4NTg4Mywic3ViIjpudWxsLCJuYmYiOjE1OTQzNDk4ODMsImF1ZCI6bnVsbCwiaWF0IjoxNTk0MzQ5ODgzLCJqdGkiOiJwRDdoTHlIMWsyIiwic2lnbmF0dXJlIjoiZDM3ZWQyMzU4MTIwY2I1YmFlNzE2Y2IyNDZhOWFjOGY3MGZjZmMxYjE3MWU2NGM0ZjE2ZTM2YTAwNWIzMTE2NyIsInN0YXR1cyI6MSwiZGF0YSI6IjY5NDQ3NjE4MzcifQ%3D%3D&#34;,
+  &#34;user_id&#34;: &#34;6944761837&#34;,
+  &#34;limit&#34;: 10,
+  &#34;end_time&#34;: 1591791576462
+}</pre>
+                        
+                      </td>
+                    </tr>
+                  
+                </table>
+              </div>
+
+              <h3>Response:</h3>
+              <div style="overflow: auto">
+                <table>
+                    
+                      <tr>
+                        <th>ok</th>
+                        <td>
+                          
+                            True
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>url</th>
+                        <td>
+                          
+                            http://test-api.51dengta.net/video/video/list
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>status_code</th>
+                        <td>
+                          
+                            200
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>reason</th>
+                        <td>
+                          
+                            OK
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>cookies</th>
+                        <td>
+                          
+                            {}
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>encoding</th>
+                        <td>
+                          
+                            utf-8
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>headers</th>
+                        <td>
+                          
+                            <pre>{
+  &#34;Server&#34;: &#34;nginx&#34;,
+  &#34;Date&#34;: &#34;Fri, 10 Jul 2020 02:58:03 GMT&#34;,
+  &#34;Content-Type&#34;: &#34;application/json;charset=utf-8&#34;,
+  &#34;Content-Length&#34;: &#34;145&#34;,
+  &#34;Connection&#34;: &#34;keep-alive&#34;,
+  &#34;Access-Control-Allow-Origin&#34;: &#34;*&#34;,
+  &#34;Access-Control-Allow-Methods&#34;: &#34;GET, POST, OPTIONS&#34;,
+  &#34;Access-Control-Allow-Credentials&#34;: &#34;true&#34;,
+  &#34;Access-Control-Allow-Headers&#34;: &#34;Content-Type, Authorization, X-Requested-With&#34;,
+  &#34;Content-Encoding&#34;: &#34;gzip&#34;
+}</pre>
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>content_type</th>
+                        <td>
+                          
+                            application/json;charset=utf-8
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>body</th>
+                        <td>
+                          
+                            
+                              <pre>{
+  &#34;result&#34;: true,
+  &#34;code&#34;: 0,
+  &#34;info&#34;: {
+    &#34;total&#34;: 0,
+    &#34;end_time&#34;: 1591791576462,
+    &#34;list&#34;: []
+  },
+  &#34;msg&#34;: &#34;&#34;,
+  &#34;request_id&#34;: &#34;g04v16cbuz3g04v93ok6d&#34;,
+  &#34;run_time&#34;: 0.0061719417572021484
+}</pre>
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                  </table>
+              </div>
+              
+
+              <h3>Validators:</h3>
+                <div style="overflow: auto">
+                
+                
+
+                
+                
+              </div>
+
+              <h3>Statistics:</h3>
+              <div style="overflow: auto">
+                <table>
+                  <tr>
+                      <th>content_size(bytes)</th>
+                      <td>157</td>
+                    </tr>
+                  <tr>
+                    <th>response_time(ms)</th>
+                    <td>21.0</td>
+                  </tr>
+                  <tr>
+                    <th>elapsed(ms)</th>
+                    <td>20.516</td>
+                  </tr>
+                </table>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        
+
+        
+          <a class="button" href="#popup_attachment_1_3">traceback</a>
+          <div id="popup_attachment_1_3" class="overlay">
+            <div class="popup">
+              <h2>Traceback Message</h2>
+              <a class="close" href="#record_1_3">&times;</a>
+              <div class="content"><pre>Traceback (most recent call last):
+  File &#34;c:\users\administrator\appdata\local\programs\python\python38\lib\site-packages\httprunner\api.py&#34;, line 69, in test
+    test_runner.run_test(test_dict)
+httprunner.exceptions.ExtractFailure: Failed to extract! =&gt; info.list.0.id
+response body: {&#39;result&#39;: True, &#39;code&#39;: 0, &#39;info&#39;: {&#39;total&#39;: 0, &#39;end_time&#39;: 1591791576462, &#39;list&#39;: []}, &#39;msg&#39;: &#39;&#39;, &#39;request_id&#39;: &#39;g04v16cbuz3g04v93ok6d&#39;, &#39;run_time&#39;: 0.0061719417572021484}
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File &#34;c:\users\administrator\appdata\local\programs\python\python38\lib\site-packages\httprunner\api.py&#34;, line 71, in test
+    self.fail(str(ex))
+AssertionError: Failed to extract! =&gt; info.list.0.id
+response body: {&#39;result&#39;: True, &#39;code&#39;: 0, &#39;info&#39;: {&#39;total&#39;: 0, &#39;end_time&#39;: 1591791576462, &#39;list&#39;: []}, &#39;msg&#39;: &#39;&#39;, &#39;request_id&#39;: &#39;g04v16cbuz3g04v93ok6d&#39;, &#39;run_time&#39;: 0.0061719417572021484}
+
+</pre></div>
+            </div>
+          </div>
+        
+
+      </td>
+    </tr>
+  
+    
+    
+    <tr id="record_1_4">
+      <th class="error" style="width:5em;">error</th>
+      <td colspan="2">分享短视频</td>
+      <td style="text-align:center;width:6em;">N/A ms</td>
+      <td class="detail">
+
+        
+        
+        <a class="button" href="#popup_log_1_4_1">log-1</a>
+        <div id="popup_log_1_4_1" class="overlay">
+          <div class="popup">
+            <h2>Request and Response data</h2>
+            <a class="close" href="#record_1_4_1">&times;</a>
+
+            <div class="content">
+              <h3>Name: </h3>
+
+              
+
+              
+
+              <h3>Request:</h3>
+              <div style="overflow: auto">
+                <table>
+                  
+                    <tr>
+                      <th>url</th>
+                      <td>
+                        
+                            N/A
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>method</th>
+                      <td>
+                        
+                            N/A
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>headers</th>
+                      <td>
+                        
+                            <pre>{}</pre>
+                        
+                      </td>
+                    </tr>
+                  
+                </table>
+              </div>
+
+              <h3>Response:</h3>
+              <div style="overflow: auto">
+                <table>
+                    
+                      <tr>
+                        <th>status_code</th>
+                        <td>
+                          
+                            N/A
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>headers</th>
+                        <td>
+                          
+                            <pre>{}</pre>
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>encoding</th>
+                        <td>
+                          
+                            None
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>content_type</th>
+                        <td>
+                          
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                  </table>
+              </div>
+              
+
+              <h3>Validators:</h3>
+                <div style="overflow: auto">
+                
+                
+
+                
+                
+              </div>
+
+              <h3>Statistics:</h3>
+              <div style="overflow: auto">
+                <table>
+                  <tr>
+                      <th>content_size(bytes)</th>
+                      <td>N/A</td>
+                    </tr>
+                  <tr>
+                    <th>response_time(ms)</th>
+                    <td>N/A</td>
+                  </tr>
+                  <tr>
+                    <th>elapsed(ms)</th>
+                    <td>N/A</td>
+                  </tr>
+                </table>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        
+
+        
+          <a class="button" href="#popup_attachment_1_4">traceback</a>
+          <div id="popup_attachment_1_4" class="overlay">
+            <div class="popup">
+              <h2>Traceback Message</h2>
+              <a class="close" href="#record_1_4">&times;</a>
+              <div class="content"><pre>Traceback (most recent call last):
+  File &#34;c:\users\administrator\appdata\local\programs\python\python38\lib\site-packages\httprunner\parser.py&#34;, line 411, in get_mapping_variable
+    return variables_mapping[variable_name]
+KeyError: &#39;video_id&#39;
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File &#34;c:\users\administrator\appdata\local\programs\python\python38\lib\site-packages\httprunner\api.py&#34;, line 69, in test
+    test_runner.run_test(test_dict)
+  File &#34;c:\users\administrator\appdata\local\programs\python\python38\lib\site-packages\httprunner\runner.py&#34;, line 388, in run_test
+    self._run_test(test_dict)
+  File &#34;c:\users\administrator\appdata\local\programs\python\python38\lib\site-packages\httprunner\runner.py&#34;, line 217, in _run_test
+    parsed_test_request = self.session_context.eval_content(raw_request)
+  File &#34;c:\users\administrator\appdata\local\programs\python\python38\lib\site-packages\httprunner\context.py&#34;, line 64, in eval_content
+    return parser.parse_lazy_data(content, self.test_variables_mapping)
+  File &#34;c:\users\administrator\appdata\local\programs\python\python38\lib\site-packages\httprunner\parser.py&#34;, line 807, in parse_lazy_data
+    parsed_value = parse_lazy_data(value, variables_mapping)
+  File &#34;c:\users\administrator\appdata\local\programs\python\python38\lib\site-packages\httprunner\parser.py&#34;, line 807, in parse_lazy_data
+    parsed_value = parse_lazy_data(value, variables_mapping)
+  File &#34;c:\users\administrator\appdata\local\programs\python\python38\lib\site-packages\httprunner\parser.py&#34;, line 795, in parse_lazy_data
+    return content.to_value(variables_mapping)
+  File &#34;c:\users\administrator\appdata\local\programs\python\python38\lib\site-packages\httprunner\parser.py&#34;, line 720, in to_value
+    var_value = get_mapping_variable(arg, variables_mapping)
+  File &#34;c:\users\administrator\appdata\local\programs\python\python38\lib\site-packages\httprunner\parser.py&#34;, line 413, in get_mapping_variable
+    raise exceptions.VariableNotFound(f&#34;{variable_name} is not found.&#34;)
+httprunner.exceptions.VariableNotFound: video_id is not found.
+</pre></div>
+            </div>
+          </div>
+        
+
+      </td>
+    </tr>
+  
+  </table>
+  
+</body>

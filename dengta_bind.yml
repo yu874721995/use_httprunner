@@ -1,0 +1,89 @@
+- config:
+    name: 接口测试
+    variables: {}
+
+
+#- test:
+#      name: 首页短视频列表
+#      request:
+#          headers:
+#              Accept: '*/*'
+#              Connection: 'keep-alive'
+#              Content-Type: 'application/x-www-form-urlencoded; charset=UTF-8'
+#              Cookie: 'liaoadmin_language=zh-cn; PHPSESSID=9mbf448uk30nb6b10gb0ph22su; liaohisi_iframe=1; liaohisi_admin_theme=default'
+#              Host: 'dev.manager.51dengta.net'
+#              X-Requested-With: 'XMLHttpRequest'
+#          data:
+#              phone: 15900000006
+#          method: POST
+#          url: http://dev.manager.51dengta.net/admin.php/app/match_maker/add.html?search=1
+#      validate:
+#          - eq: [status_code, 200]
+
+
+
+- test:
+    name: 登录
+    request:
+        headers:
+            Content-Type: application/json
+        json:
+            phone: 15900000006
+            code: "80008"
+        method: POST
+        url: /user/auth/smsLogin
+    extract:
+        - access_token: content.info.access_token
+        - user_id: content.info.user_id
+    validate:
+        - eq: [status_code, 200]
+
+
+- test:
+      name: 开播列表
+      request:
+          headers:
+              Content-Type: application/json
+          json:
+              access_token: $access_token
+              page:  1
+              limit: 10
+          method: POST
+          url: /room/room/list
+      validate:
+          - eq: [status_code, 200]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

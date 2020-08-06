@@ -1,0 +1,133 @@
+- config:
+    name: 接口测试
+    variables: {}
+    base_url: http://api.51dengta.net
+
+- test:
+    name: 登录
+    request:
+        headers:
+            Content-Type: application/json
+        json:
+            phone: 15900000006
+            code: "80008"
+        method: POST
+        url: /user/auth/smsLogin
+    extract:
+        - access_token: content.info.access_token
+        - user_id: content.info.user_id
+    validate:
+        - eq: [status_code, 200]
+
+#- test:
+#      name: 首页短视频列表
+#      request:
+#          headers:
+#              Content-Type: application/json
+#          json:
+#              access_token: $access_token
+#              limit: 10
+#              end_time: 0
+#          method: POST
+#          url: /video/video/recommend
+#      extract:
+#          - end_time: content.info.end_time
+#      validate:
+#          - eq: [status_code, 200]
+#
+- test:
+      name: 首页短视频列表
+      request:
+          headers:
+              Content-Type: application/json
+          json:
+              access_token: 'eyJhbGciOiJITUFDU0hBMjU2IiwiaXNzIjoiRWFzeVN3b29sZSIsImV4cCI6MTYyNjU3NTc1Miwic3ViIjpudWxsLCJuYmYiOjE1OTUwMzk3NTIsImF1ZCI6bnVsbCwiaWF0IjoxNTk1MDM5NzUyLCJqdGkiOiJuc09nQXVpa0ZCIiwic2lnbmF0dXJlIjoiYzZhN2M0ZmVlZjQyODA2YTdmZTA1M2U1MzMzMWEyMmY3YjUxMjFmNjFkZTg5YjA1MzQwZTdkOTUyMDQyYjlmNCIsInN0YXR1cyI6MSwiZGF0YSI6IjgzNjEzNjE3MTYifQ'
+              limit: 10
+              end_time: 0
+          method: POST
+          url: /video/video/recommend
+      validate:
+          - eq: [status_code, 200]
+
+#- test:
+#      name: 首页推荐用户
+#      request:
+#          headers:
+#              Content-Type: application/json
+#          json:
+#              access_token: $access_token
+#              page:  1
+#              limit: 10
+#          method: POST
+#          url: /recommend/recommend/recommend
+#      validate:
+#          - eq: [status_code, 200]
+
+#- test:
+#      name: 主页短视频列表---
+#      request:
+#          headers:
+#              Content-Type: application/json
+#          json:
+#              access_token: $access_token
+#              user_id: $user_id
+#              limit: 10
+#              end_time: 0
+#          method: POST
+#          url: /video/video/list
+#      extract:
+#        - video_id: content.info.list.0.id
+#      validate:
+#          - eq: [status_code, 200]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

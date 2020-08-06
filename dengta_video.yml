@@ -1,0 +1,374 @@
+- config:
+    name: 接口测试
+    variables: {}
+    base_url: http://test-api.51dengta.net
+
+- test:
+    name: 登录
+    request:
+        headers:
+            Content-Type: application/json
+        json:
+            phone: 15900000012
+            code: "80008"
+        method: POST
+        url: /user/auth/smsLogin
+    extract:
+        - access_token: content.info.access_token
+        - user_id: content.info.user_id
+    validate:
+        - eq: [status_code, 200]
+
+
+
+- test:
+      name: 开播列表
+      request:
+          headers:
+              Content-Type: application/json
+          json:
+              access_token: $access_token
+              page:  1
+              limit: 10
+          method: POST
+          url: /room/room/list
+      validate:
+          - eq: [status_code, 200]
+
+#- test:
+#      name: 动态列表
+#      request:
+#          headers:
+#              Content-Type: application/json
+#          json:
+#              access_token: $access_token
+#              limit: 10
+#          method: POST
+#          url: /post/post/list
+#      validate:
+#          - eq: [status_code, 200]
+#
+#- test:
+#      name: 发布短视频
+#      request:
+#          headers:
+#              Content-Type: application/json
+#          json:
+#              access_token: $access_token
+#              cover: "https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1591790190&di=d6cf6876850fdc19f6b0690bf1dfb2ae&src=http://a3.att.hudong.com/68/61/300000839764127060614318218_950.jpg"
+#              url: "http://qiniucdnct.inter.iqiyi.com/videos/other/20200520/83/4c/ef597da70c690a505b525466c37b0555.mp4?dis_dz=CT-GuangDong_ShenZhen&dis_st=46&src=iqiyi.com&dis_hit=0&uuid=77893546-5ee0ce22-25f"
+#              duration: 54
+#              with_post: 0
+#              width: 820
+#              height: 1920
+#          method: POST
+#          url: /video/video/create
+#      validate:
+#          - eq: [status_code, 200]
+#
+#
+- test:
+      name: 主页短视频列表---
+      request:
+          headers:
+              Content-Type: application/json
+          json:
+              access_token: $access_token
+              user_id: $user_id
+              limit: 10
+              end_time: 1591791576462
+          method: POST
+          url: /video/video/list
+      extract:
+        - video_id: content.info.list.0.id
+      validate:
+          - eq: [status_code, 200]
+#
+#
+#
+#- test:
+#      name: 不喜欢
+#      request:
+#          headers:
+#              Content-Type: application/json
+#          json:
+#              access_token: $access_token
+#              video_id: 10
+#              status: 1
+#          method: POST
+#          url: /video/video/ignore
+#      validate:
+#          - eq: [status_code, 200]
+#
+#- test:
+#      name: 点赞短视频
+#      request:
+#          headers:
+#              Content-Type: application/json
+#          json:
+#              access_token: $access_token
+#              video_id: $video_id
+#              status: 1
+#          method: POST
+#          url: /video/video/like
+#      validate:
+#          - eq: [status_code, 200]
+#
+- test:
+      name: 分享短视频
+      request:
+          headers:
+              Content-Type: application/json
+          json:
+              access_token: $access_token
+              video_id: $video_id
+          method: POST
+          url: /video/video/shareCount
+      validate:
+          - eq: [status_code, 200]
+#
+#- test:
+#      name: 评论
+#      request:
+#          headers:
+#              Content-Type: application/json
+#          json:
+#              access_token: $access_token
+#              video_id: $video_id
+#              text: "哈哈哈哈哈哈哈哈哈哈或或或或或或或或或或或或"
+#          method: POST
+#          url: /video/comment/create
+#      validate:
+#          - eq: [status_code, 200]
+#
+#- test:
+#      name: 评论列表
+#      request:
+#          headers:
+#              Content-Type: application/json
+#          json:
+#              access_token: $access_token
+#              video_id: $video_id
+#          method: POST
+#          url: /video/comment/list
+#      extract:
+#        - comment_id: content.info.list.0.id
+#      validate:
+#          - eq: [status_code, 200]
+#
+#- test:
+#      name: 评论点赞
+#      request:
+#          headers:
+#              Content-Type: application/json
+#          json:
+#              access_token: $access_token
+#              video_id: $video_id
+#              comment_id: $comment_id
+#              status: 1
+#          method: POST
+#          url: /video/comment/like
+#      validate:
+#          - eq: [status_code, 200]
+#
+#- test:
+#      name: 回复评论
+#      request:
+#          headers:
+#              Content-Type: application/json
+#          json:
+#              access_token: $access_token
+#              video_id: $video_id
+#              text: "回复一下嘻嘻嘻嘻"
+#              to_user_id: $user_id
+#              comment_id: $comment_id
+#          method: POST
+#          url: /video/comment/create
+#      validate:
+#          - eq: [status_code, 200]
+#
+#
+#
+#- test:
+#      name: 回复列表
+#      request:
+#          headers:
+#              Content-Type: application/json
+#          json:
+#              access_token: $access_token
+#              video_id: $video_id
+#              comment_id: $comment_id
+#              limit: 10
+#          method: POST
+#          url: /video/comment/subList
+#      validate:
+#          - eq: [status_code, 200]
+#
+#- test:
+#      name: 音乐类型
+#      request:
+#          headers:
+#              Content-Type: application/json
+#          json:
+#              access_token: $access_token
+#              page: "1"
+#              limit: "100"
+#          method: POST
+#          url: /video/bgm/categories
+#      validate:
+#          - eq: [status_code, 200]
+#
+#- test:
+#      name: 最热
+#      request:
+#          headers:
+#              Content-Type: application/json
+#          json:
+#              access_token: $access_token
+#              page: "1"
+#              limit: "10"
+#          method: POST
+#          url: /video/bgm/hots
+#      extract:
+#          - bgm_id: content.info.list.0.id
+#      validate:
+#          - eq: [status_code, 200]
+#
+#- test:
+#      name: 收藏
+#      request:
+#          headers:
+#              Content-Type: application/json
+#          json:
+#              access_token: $access_token
+#              bgm_id: "3"
+#              status: 1
+#          method: POST
+#          url: /video/bgm/setFavor
+#      validate:
+#          - eq: [status_code, 200]
+#
+#- test:
+#      name: 收藏列表
+#      request:
+#          headers:
+#              Content-Type: application/json
+#          json:
+#              access_token: $access_token
+#          method: POST
+#          url: /video/bgm/favors
+#      validate:
+#          - eq: [status_code, 200]
+#
+#- test:
+#      name: 音乐列表搜索
+#      request:
+#          headers:
+#              Content-Type: application/json
+#          json:
+#              access_token: $access_token
+#              keys: "1"
+#          method: POST
+#          url: /video/bgm/search
+#      validate:
+#          - eq: [status_code, 200]
+#
+#- test:
+#      name: 音乐分类列表
+#      request:
+#          headers:
+#              Content-Type: application/json
+#          json:
+#              access_token: $access_token
+#              cate_id: "1"
+#          method: POST
+#          url: /video/bgm/list
+#      validate:
+#          - eq: [status_code, 200]
+#
+#- test:
+#      name: banner列表
+#      request:
+#          headers:
+#              Content-Type: application/json
+#          json:
+#              access_token: $access_token
+#          method: POST
+#          url: /banner/banner/list
+#      validate:
+#          - eq: [status_code, 200]
+#
+#- test:
+#      name: 话题列表
+#      request:
+#          headers:
+#              Content-Type: application/json
+#          json:
+#              access_token: $access_token
+#          method: POST
+#          url: /post/topic/getList
+#      validate:
+#          - eq: [status_code, 200]
+#
+#- test:
+#      name: 上传视频
+#      request:
+#          headers:
+#              Content-Type: application/json
+#          json:
+#              access_token: $access_token
+#              cover: "https://dss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1906469856,4113625838&fm=26&gp=0.jpg"
+#              video: "http://1302331714.vod2.myqcloud.com/24c975fbvodcq1302331714/bbff47755285890804066888632/0V3Sda1mCb0A.mp4"
+#          method: POST
+#          url: /user/album/upload
+#      validate:
+#          - eq: [status_code, 200]
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#- test:
+#      name: 删除评论
+#      request:
+#          headers:
+#              Content-Type: application/json
+#          json:
+#              access_token: $access_token
+#              video_id: $video_id
+#              comment_id: $comment_id
+#          method: POST
+#          url: /video/comment/del
+#      validate:
+#          - eq: [status_code, 200]
+#
+#
+#- test:
+#      name: 删除视频
+#      request:
+#          headers:
+#              Content-Type: application/json
+#          json:
+#              access_token: $access_token
+#              video_id: $video_id
+#          method: POST
+#          url: /video/video/del
+#      validate:
+#          - eq: [status_code, 200]

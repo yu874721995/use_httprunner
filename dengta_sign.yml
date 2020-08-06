@@ -1,0 +1,44 @@
+- config:
+    name: 接口测试
+    variables: {}
+    base_url: http://dev.api.51dengta.net
+
+- test:
+    name: 登录--$phone
+    request:
+        headers:
+            Content-Type: application/json
+        json:
+            phone: $phone
+            code: "80008"
+        method: POST
+        url: /user/auth/smsLogin
+    extract:
+        - access_token: content.info.access_token
+        - user_id: content.info.user_id
+    validate:
+        - eq: [status_code, 200]
+
+- test:
+      name: 签到
+      request:
+          headers:
+              Content-Type: application/json
+          json:
+              access_token: $access_token
+          method: POST
+          url: /user/sign/sign
+      validate:
+          - eq: [status_code, 200]
+
+- test:
+      name: 签到记录
+      request:
+          headers:
+              Content-Type: application/json
+          json:
+              access_token: $access_token
+          method: POST
+          url: /user/sign/signRecord
+      validate:
+          - eq: [status_code, 200]

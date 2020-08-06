@@ -1,0 +1,8 @@
+config:
+    name: 等他接口用例
+
+testcases:
+    testcase1_name:
+        testcase: dengta_video.yml
+        parameters:
+            num: ${P(dengta.csv)}
